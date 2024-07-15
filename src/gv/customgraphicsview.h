@@ -3,11 +3,16 @@
 
 #include <QtWidgets>
 
+class CustomGraphicsScene;
+
 class CustomGraphicsView : public QGraphicsView
 {
     Q_OBJECT
 public:
     CustomGraphicsView(QWidget* parent = nullptr);
+
+private:
+    CustomGraphicsScene* m_scene;
 };
 
 

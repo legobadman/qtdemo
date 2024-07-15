@@ -1,13 +1,16 @@
 #include <QtWidgets>
-#include "testdialog.h"
+#include "gv/customgraphicsview.h"
 
 
 int main(int argc, char* argv[])
 {
     QApplication app(argc, argv);
 
-    TestDialog dlg;
-    dlg.show();
+    CustomGraphicsView view;
+    view.show();
+
+    //TestDialog dlg;
+    //dlg.show();
 
     return app.exec();
 }
