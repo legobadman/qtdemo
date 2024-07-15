@@ -33,7 +33,7 @@ QVariant CustomRectItem::itemChange(GraphicsItemChange change, const QVariant& v
     {
         QPointF pos = value.toPointF();
         qreal yfix = 0;
-        if (pos.y() >= 50 && pos.y() < 100) {
+        /*if (pos.y() >= 50 && pos.y() < 100) {
             yfix = 50;
         }
         else if (pos.y() >= 100 && pos.y() < 150) {
@@ -45,8 +45,8 @@ QVariant CustomRectItem::itemChange(GraphicsItemChange change, const QVariant& v
         else 
         {
             yfix = 200;
-        }
-        return QPointF(pos.x(), yfix);
+        }*/
+        return QPointF(pos.x() < 0 ? 0: pos.x(), yfix);
     }
     else if (change == QGraphicsItem::ItemPositionHasChanged)
     {
