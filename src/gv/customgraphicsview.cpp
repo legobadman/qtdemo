@@ -12,3 +12,13 @@ CustomGraphicsView::CustomGraphicsView(QWidget* parent)
     this->setScene(m_scene);
     setViewportUpdateMode(QGraphicsView::FullViewportUpdate);
 }
+
+void CustomGraphicsView::wheelEvent(QWheelEvent* event)
+{
+    qreal zoomFactor = 1;
+    if (event->angleDelta().y() > 0)
+        zoomFactor = 1.25;
+    else if (event->angleDelta().y() < 0)
+        zoomFactor = 1 / 1.25;
+    scale(zoomFactor, zoomFactor);
+}

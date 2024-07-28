@@ -11,6 +11,7 @@ class CustomGraphicsView : public QGraphicsView
 public:
     CustomGraphicsView(QWidget* parent = nullptr);
 
+    void wheelEvent(QWheelEvent* event) override;
 private:
     CustomGraphicsScene* m_scene;
 };
